@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-
 import "./globals.css";
-import Navbar from "@/components/navigation/navbar";
+
+import localFont from "next/font/local";
+import { SessionProvider } from "next-auth/react";
+
+import { Toaster } from "@/components/ui/sonner";
 import ThemeProvider from "@/context/Theme";
+
+import { auth } from "../auth";
 
 const inter = localFont({
   src: "./fonts/InterVF.ttf",
@@ -22,24 +26,28 @@ export const metadata: Metadata = {
   description: "A local version of StackOverflow for Philippine Developers",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <SessionProvider session={session}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );
