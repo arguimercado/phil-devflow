@@ -73,6 +73,8 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+ 
 }
 
 @theme {
@@ -109,7 +111,9 @@
   --shadow-dark-100: 0px 2px 10px 0px rgba(46, 52, 56, 0.1);
   --shadow-dark-200: 2px 0px 20px 0px rgba(39, 36, 36, 0.04);
 
-  --background-image-auth-dark: url("/images/auth-dark.png");
+  
+
+ --background-image-auth-dark: url("/images/auth-dark.png");
   --background-image-auth-light: url("/images/auth-light.png");
 
   --breakpoint-xs: 420px;
@@ -137,6 +141,12 @@ body {
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer components {
+  .btn-login {
+    @apply background-dark400_light900 body-medium text-dark200_light800 min-h-12 flex-1 rounded-2 px-4 py-3.5 hover:cursor-pointer
   }
 }
 
