@@ -9,7 +9,7 @@ import NavLinks from "./navbar/NavLinks";
 
 const LeftSidebar = () => {
   return (
-    <section className="custom-scrollbar background-light900_dark200 light-border sticky top-0 left-0 h-screen flex flex-col justify-between border-r p-6 pt-36 max-sm:hidden lg:w-[266px] overflow-y-auto shadow-light-300 dark:shadow-none">
+    <section className="custom-scrollbar background-light900_dark200 light-border sticky top-0 left-0 h-screen flex flex-col justify-between border-r p-6 pt-20 max-sm:hidden lg:w-[266px] overflow-y-auto shadow-light-300 dark:shadow-none">
       <div className="flex flex-1 flex-col gap-6">
         <NavLinks isMobileNav={false} />
       </div>
