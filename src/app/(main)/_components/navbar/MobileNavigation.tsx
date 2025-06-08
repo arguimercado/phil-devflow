@@ -6,10 +6,12 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import ROUTE from "@/constants/route";
+
 import NavLinks from "./NavLinks";
 
 const MobileNavigation = () => {
@@ -28,19 +30,21 @@ const MobileNavigation = () => {
         side="left"
         className="border-none background-light900_dark200 px-4 py-4"
       >
-        <SheetTitle className="hidden">Edit profile</SheetTitle>
-        <Link href={"/"} className="flex items-center gap-1 mb-4">
-          <Image
-            src="/images/site-logo.svg"
-            alt="DevFlow Logo"
-            width={23}
-            height={23}
-            className="invert-colors"
-          />
-          <p className="h3-bold font-space-grotesk text-dark-100 dark:text-light-900">
-            PhilDev <span className="text-primary-500">Flow</span>
-          </p>
-        </Link>
+        <SheetHeader>
+          <SheetTitle className="hidden">Edit profile</SheetTitle>
+          <Link href={"/"} className="flex items-center gap-1 mb-4">
+            <Image
+              src="/images/site-logo.svg"
+              alt="DevFlow Logo"
+              width={23}
+              height={23}
+              className="invert-colors"
+            />
+            <p className="h3-bold font-space-grotesk text-dark-100 dark:text-light-900">
+              PhilDev <span className="text-primary-500">Flow</span>
+            </p>
+          </Link>
+        </SheetHeader>
 
         <div className="no-scrollbar flex h-[calc(100vh-80px)] flex-col justify-between overflow-y-auto">
           <SheetClose asChild>
