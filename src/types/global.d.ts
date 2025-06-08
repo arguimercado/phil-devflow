@@ -3,3 +3,8 @@ type UrlQueryParams = {
   key: string;
   value: string;
 };
+
+type RemoveUrlQueryParams = {
+  params: string;
+  keysToRemove: string[];
+};

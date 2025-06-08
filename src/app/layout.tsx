@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
-
 import localFont from "next/font/local";
 import { SessionProvider } from "next-auth/react";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import ThemeProvider from "@/components/context/Theme";
 import { Toaster } from "@/components/ui/sonner";
@@ -45,7 +44,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <NuqsAdapter>{children}</NuqsAdapter>
             <Toaster />
           </ThemeProvider>
         </SessionProvider>

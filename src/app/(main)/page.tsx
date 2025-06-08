@@ -1,6 +1,7 @@
 import { FileQuestion } from "lucide-react";
 import Link from "next/link";
 
+import LocalSearch from "@/components/controls/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTE from "@/constants/route";
 
@@ -16,7 +17,9 @@ export default function Home() {
           </Link>
         </Button>
       </section>
-      <section className="mt-11">Local Search</section>
+      <section className="mt-11">
+        <LocalSearch imgSrc="/icons/search.svg" placeholder="Search..." />
+      </section>
       HomeFilter
       <div className="mt-10 flex w-full flex-col gap-6">
         <p>Question Card 1</p>
