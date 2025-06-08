@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 import localFont from "next/font/local";
 import { SessionProvider } from "next-auth/react";
 
+import ThemeProvider from "@/components/context/Theme";
 import { Toaster } from "@/components/ui/sonner";
-import ThemeProvider from "@/context/Theme";
 
 import { auth } from "../auth";
 

@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 import ROUTE from "@/constants/route";
 
-import { Button } from "../ui/button";
+import { Button } from "../../../../components/ui/button";
 
 const SocialAuthForm = () => {
   const handleSignin = async (provider: "github" | "google") => {
